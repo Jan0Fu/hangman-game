@@ -1,14 +1,18 @@
 import random
 import string
 
-words = ["astronaut", "electricity", "virus", "paranoid", "velociraptor", "princess", "therapeut"]
 
-def hangman():
+def random_words():
+    words = ["astronaut", "electricity", "virus", "paranoid", "velociraptor", "princess", "therapeut"]
     word = random.choice(words)
+    return word.upper()
+    
+def hangman():
+    word = random_words()
     word_letters = set(word)
     alphabet = set(string.ascii_uppercase)
-    used_letters = set()
-    user_letter = input("Guess a letter: ").upper()
+    used_letters = set() 
+    print(word)
 
     while len(word_letters) > 0:
         print("You have used these letters: ", ' '.join(used_letters))
